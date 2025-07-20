@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Author" content="Sivasaravanan">
+        <title>Matplotlib Plots</title>
+        <style>
+            h3 {
+                color:green;
+                font-size: 25px;
+            }
+
+        </style>
+        <link rel="stylesheet" href="Two.css" type="text/CSS">
+    </head>
+    <body>
+        <h1 style="text-align: center;">Plots and Graphs in Python</h1>
+        <hr>
+        <ol type="1">
+            <li style="font-size: 25px;">Line Plot</li>
+            <li style="font-size: 25px;">Bar Plot</li>
+            <li style="font-size: 25px;">Area Plot</li>
+        </ol>
+        <br>
+        <br>
+		<h2>1.Line Plot</h2>
+        <h3>1.1 Plotting a Simple Line Plot</h3>
+        <pre><code>
+		import matplotlib.pyplot as plt
+		
+		month = range(1,13)
+		City_One=[30.0,32.5,45.0,55.5,65.0,75.0,80.0,78.0,70.0,58.0,45.0,35.0]
+
+		plt.plot(month,City_One, color='blue', label="City A")
+
+		plt.xlabel("Month")
+		plt.ylabel("Temperature(F)")
+		plt.title("Average Monthly Temparature in City A")
+		plt.legend()
+		plt.savefig(Path)
+		plt.show()
+		</code></pre>
+		<p><samp>Output Plot</samp></p>
+		<img src="Graph\Line-One.jpg" alt="Simple Line Plot" style="width:700px; height:450px">
+		<br><br>
+		<h3>1.2 Plotting a Multiple Line Plot</h3>
+        <pre><code>
+		import matplotlib.pyplot as plt
+
+		month = range(1,13)
+		City_One=[30.0,32.5,45.0,55.5,65.0,75.0,80.0,78.0,70.0,58.0,45.0,35.0]
+		City_Two=[25.0,28.0,38.0,50.0,60.0,70.0,85.0,83.0,68.0,55.0,40.0,30.0]
+
+		plt.plot(month,City_One, color='blue', label="City A")
+		plt.plot(month,City_Two, color='red', label="City B")
+
+		plt.xlabel("Month")
+		plt.ylabel("Temperature(F)")
+		plt.title("Average Monthly Temparatures")
+		plt.legend()
+		plt.savefig(Path)
+		plt.show()
+		</code></pre>
+		<p><samp>Output Plot</samp></p>
+		<img src="Graph\Line-Two.jpg" alt="Multiple line Plot" style="width:700px; height:450px">
+		<br><br>
+		<h3>1.3 Styling the Line Plot</h3>
+        <pre><code>
+		import matplotlib.pyplot as plt
+
+		month = range(1,13)
+		City_One=[30.0,32.5,45.0,55.5,65.0,75.0,80.0,78.0,70.0,58.0,45.0,35.0]
+		City_Two=[25.0,28.0,38.0,50.0,60.0,70.0,85.0,83.0,68.0,55.0,40.0,30.0]
+
+		plt.plot(month,City_One, color='blue', label="City A", linestyle="--", marker="o" )
+		plt.plot(month,City_Two, color='red', label="City B", linestyle="-", marker="s" )
+
+		plt.xlabel("Month")
+		plt.ylabel("Temperature(F)")
+		plt.title("Average Monthly Temparatures")
+		plt.legend()
+		plt.savefig(Path)
+		plt.show()
+		</code></pre>
+		<p><samp>Output Plot</samp></p>
+		<img src="Graph\Line-style.jpg" alt="Styled line Plot" style="width:700px; height:450px">
+		<br><br>
+		<p>There are default style, given in Matplotlib which can be used. To know the styles available use the command
+		<pre>print(plt.style.available)</pre>. We will get something similiar To
+		<pre>['Solarize_Light2', '_classic_test_patch', '_mpl-gallery', '_mpl-gallery-nogrid', 'bmh', 'classic', 'dark_background', 'fast', 'fivethirtyeight', 'ggplot', 'grayscale', 'petroff10', 'seaborn-v0_8', 'seaborn-v0_8-bright', 'seaborn-v0_8-colorblind', 'seaborn-v0_8-dark', 'seaborn-v0_8-dark-palette', 'seaborn-v0_8-darkgrid', 'seaborn-v0_8-deep', 'seaborn-v0_8-muted', 'seaborn-v0_8-notebook', 'seaborn-v0_8-paper', 'seaborn-v0_8-pastel', 'seaborn-v0_8-poster', 'seaborn-v0_8-talk', 'seaborn-v0_8-ticks', 'seaborn-v0_8-white', 'seaborn-v0_8-whitegrid', 'tableau-colorblind10']</pre>
+		we can use any style given above.</p>
+		<br><br>
+		<h3>1.4 Styling the Line Plot Using the available Styles</h3>
+        <pre><code>
+		import matplotlib.pyplot as plt
+
+		month = range(1,13)
+		City_One=[30.0,32.5,45.0,55.5,65.0,75.0,80.0,78.0,70.0,58.0,45.0,35.0]
+		City_Two=[25.0,28.0,38.0,50.0,60.0,70.0,85.0,83.0,68.0,55.0,40.0,30.0]
+
+		plt.style.use('seaborn-v0_8-paper')
+		plt.plot(month,City_One, color='blue', label="City A")
+		plt.plot(month,City_Two, color='red', label="City B")
+
+		plt.xlabel("Month")
+		plt.ylabel("Temperature(F)")
+		plt.title("Average Monthly Temparatures")
+		plt.legend()
+		plt.savefig(Path)
+		plt.show()
+		</code></pre>
+		<p><samp>Output Plot</samp></p>
+		<img src="Graph\Line-style1.jpg" alt="Default Styled line Plot" style="width:700px; height:450px">
+		<br><br>
+		<h3>1.4.1 Styling the Line Plot Using the available Styles</h3>
+        <pre><code>
+		import matplotlib.pyplot as plt
+
+		month = range(1,13)
+		City_One=[30.0,32.5,45.0,55.5,65.0,75.0,80.0,78.0,70.0,58.0,45.0,35.0]
+		City_Two=[25.0,28.0,38.0,50.0,60.0,70.0,85.0,83.0,68.0,55.0,40.0,30.0]
+
+		plt.style.use('dark_background')
+		plt.plot(month,City_One, color='blue', label="City A")
+		plt.plot(month,City_Two, color='red', label="City B")
+
+		plt.xlabel("Month")
+		plt.ylabel("Temperature(F)")
+		plt.title("Average Monthly Temparatures")
+		plt.legend()
+		plt.savefig(Path)
+		plt.show()
+		</code></pre>
+		<p><samp>Output Plot</samp></p>
+		<img src="Graph\Line-style2.jpg" alt="Default Styled line Plot" style="width:700px; height:450px">
+		<br><br><br><br><br><br><br><br>
+		<p>There are different line styles that can be used in plot. Usually Simple linestyles can be defined using the strings "solid", "dotted", "dashed" or "dashdot". More refined control can be achieved by providing a dash tuple (offset, (on_off_seq)). For example, (0, (3, 10, 1, 15)) means (3pt line, 10pt space, 1pt line, 15pt space) with no offset, while (5, (10, 3)), means (10pt line, 3pt space), but skip the first 5pt line.</p>
+		<img src="Graph\Line-Styles.png" alt="Available Line Styles" style="width:700px; height:550px">
+		
+		
+		
+		
+		
+		
+		
+		
+        <h2>2.Bar Plot</h2>
+        <h3>2.1 Plotting a Simple Bar Plot</h3>
+        <pre><code>
+		import matplotlib.pyplot as plt
+		ages = [25,26,27,28,29,30,31,32,33,34,35]
+		dev_salary = [28496,42000,46752,49320,53200,56000,62316,64928,67317,68748,73752]
+		plt.bar(ages, dev_salary,color='blue',label="All Developers")
+		plt.xlabel("Ages")
+		plt.ylabel("Median Salary(USD)")
+		plt.title("Median Salary(USD) by Age")
+		plt.legend()
+		plt.show()
+		</code></pre>
+		<p><samp>Output Plot</samp></p>
+		<img src="Graph\Bar-Simple.jpg" alt="Simple Bar Plot" style="width:700px; height:450px">
+		<br><br>
+		<h3>2.2 Bar Chart Overlapping Data Bars</h3>
+        <pre><code>
+		import matplotlib.pyplot as plt
+		import numpy as np
+
+		###Bar Chart Overlapping Data Bars
+
+		ages = [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+		dev_salaries = [38496, 42000, 46752, 49320, 53200, 56000, 62316, 64928, 67317, 68748, 73752]
+		py_salaries = [45372, 48876, 53850, 57287, 63016, 65998, 70003, 70000, 71496, 75370, 83640]
+		js_salaries = [37810, 43515, 46823, 49293, 53437, 56373, 62375, 66674, 68745, 68746, 74583]
+
+		x_indexes = np.arange(len(ages))
+		width = 0.25  # Adjust width for spacing
+
+		plt.bar(ages,dev_salaries,color='blue', label='All developers')
+		plt.bar(ages,py_salaries,color='red', label='Python')
+		plt.bar(ages,js_salaries,color='green', label='JS')
+
+		plt.xlabel("Ages")
+		plt.ylabel("Median Salary (USD)")
+		plt.title("Median Salary by Age")
+		plt.legend()
+		plt.show()
+		</code></pre>
+		<p><samp>Output Plot</samp></p>
+		<img src="Graph\Bar-Overlap.jpg" alt="Overlapping Bar Plot" style="width:700px; height:450px">
+		<br><br>
+		<h3>2.3 Bar Chart Data Bars--X Label Wrong</h3>
+        <pre><code>
+		import matplotlib.pyplot as plt
+		import numpy as np
+
+		###Bar Chart Data Bars
+
+		ages = [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+		dev_salaries = [38496, 42000, 46752, 49320, 53200, 56000, 62316, 64928, 67317, 68748, 73752]
+		py_salaries = [45372, 48876, 53850, 57287, 63016, 65998, 70003, 70000, 71496, 75370, 83640]
+		js_salaries = [37810, 43515, 46823, 49293, 53437, 56373, 62375, 66674, 68745, 68746, 74583]
+
+		x_indexes = np.arange(len(ages))
+		width = 0.25  # Adjust width for spacing
+
+		plt.bar(x_indexes - width, dev_salaries, width=width, color='blue', label="All Developers")
+		plt.bar(x_indexes, py_salaries, width=width, color='green', label="Python")
+		plt.bar(x_indexes + width, js_salaries, width=width, color='red', label="JavaScript")
+
+		plt.xlabel("Ages")
+		plt.ylabel("Median Salary (USD)")
+		plt.title("Median Salary by Age")
+		plt.legend()
+		plt.show()
+		</code></pre>
+		<p><samp>Output Plot</samp></p>
+		<img src="Graph\Bar-XTick.jpg" alt="Bar Chart Plot" style="width:700px; height:450px">
+				<br><br>
+		<h3>2.4 Bar Chart Data Bars--X Label Correct</h3>
+        <pre><code>
+		import matplotlib.pyplot as plt
+		import numpy as np
+
+		###Bar Chart Data Bars
+
+		ages = [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+		dev_salaries = [38496, 42000, 46752, 49320, 53200, 56000, 62316, 64928, 67317, 68748, 73752]
+		py_salaries = [45372, 48876, 53850, 57287, 63016, 65998, 70003, 70000, 71496, 75370, 83640]
+		js_salaries = [37810, 43515, 46823, 49293, 53437, 56373, 62375, 66674, 68745, 68746, 74583]
+
+		x_indexes = np.arange(len(ages))
+		width = 0.25  # Adjust width for spacing
+
+		plt.bar(x_indexes - width, dev_salaries, width=width, color='blue', label="All Developers")
+		plt.bar(x_indexes, py_salaries, width=width, color='green', label="Python")
+		plt.bar(x_indexes + width, js_salaries, width=width, color='red', label="JavaScript")
+
+		plt.xticks(ticks=x_indexes, labels=ages)
+		plt.xlabel("Ages")
+		plt.ylabel("Median Salary (USD)")
+		plt.title("Median Salary by Age")
+		plt.legend()
+		plt.show()
+		</code></pre>
+		<p><samp>Output Plot</samp></p>
+		<img src="Graph\Bar-Chart.jpg" alt="Bar Chart Plot" style="width:700px; height:450px">
+		
+    </body>
+</html>
